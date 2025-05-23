@@ -21,6 +21,8 @@
 
       #loader {
         text-align: center;
+        position: absolute;
+        z-index: 999;
       }
 
       #progressBar {
@@ -40,11 +42,12 @@
       }
 
       canvas {
-        max-width: 100%;
-        max-height: 100%;
         width: 100%;
         height: 100%;
-        display: block;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     </style>
   </head>
@@ -57,7 +60,7 @@
       </div>
     </div>
 
-    <div id="unityContainer" style="width: 100%; height: 100%; display: none;"></div>
+    <canvas id="unity-canvas"></canvas>
 
     <script>
       var buildUrl = "Build";
@@ -70,17 +73,18 @@
         companyName: "{{{ COMPANY_NAME }}}",
         productName: "{{{ PRODUCT_NAME }}}",
         productVersion: "{{{ PRODUCT_VERSION }}}",
-        devicePixelRatio: 1
+        devicePixelRatio: 1,
+        canvas: document.querySelector("#unity-canvas")
       };
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(document.querySelector("#unityContainer"), config, (progress) => {
+        createUnityInstance(document.querySelector("#unity-canvas"), config, (progress) => {
           document.querySelector("#progressBarFill").style.width = (progress * 100) + "%";
         }).then((unityInstance) => {
           document.querySelector("#loader").style.display = "none";
-          document.querySelector("#unityContainer").style.display = "block";
+          document.querySelector("#unity-canvas").style.display = "block";
         }).catch((message) => {
           alert(message);
         });

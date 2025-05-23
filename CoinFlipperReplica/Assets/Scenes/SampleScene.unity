@@ -2338,7 +2338,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1839967237}
   - component: {fileID: 1839967238}
-  - component: {fileID: 1839967239}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2387,31 +2386,6 @@ MonoBehaviour:
   twoXButton: {fileID: 222842472}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
---- !u!114 &1839967239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839967236}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58291373b370fe408a628f1971dbda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headsLayout: {fileID: 2090361362}
-  tailsLayout: {fileID: 1983742547}
-  betInputLayout: {fileID: 549619843}
-  coinRect: {fileID: 1712303870}
-  balanceText: {fileID: 1703976977}
-  resultText: {fileID: 1375120244}
-  buttonWidthPercent: 0.25
-  buttonHeightPercent: 0.12
-  inputWidthPercent: 0.4
-  inputHeightPercent: 0.1
-  coinSizePercent: 0.2
-  fontBaseSize: 36
-  fontScaleFactor: 0.02
 --- !u!1 &1983742545
 GameObject:
   m_ObjectHideFlags: 0
